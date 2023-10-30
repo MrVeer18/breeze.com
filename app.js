@@ -5,9 +5,8 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-var indexRouter = require("./routes/index");
 var weatherRouter = require("./routes/weather");
-// var userRouter = require("./routes/user");
+
 
 var app = express();
 
@@ -24,8 +23,6 @@ app.use(express.static(path.join(__dirname, "public")));
 // app.use('/', indexRouter);
 app.use(cors());
 app.use("/home", weatherRouter);
-// app.use("/user", userRouter);
-app.use("/index", indexRouter);
 
 
 // 

@@ -1,8 +1,9 @@
+require('dotenv').config();
 var express = require("express");
 var router = express.Router();
 var axios = require("axios");
 
-apiKey = "e332b99b81f941b89e1113016230310";
+API_KEY = process.env.API_KEY;
 
 /* GET users listing. */
 router.get("/", async (req, res) => {
@@ -10,7 +11,7 @@ router.get("/", async (req, res) => {
   try {
     const currentWeather = await axios.get(
       "https://api.weatherapi.com/v1/forecast.json?key=" +
-        apiKey +
+        API_KEY +
         "&q=" +
         city +
         "&days=7"
